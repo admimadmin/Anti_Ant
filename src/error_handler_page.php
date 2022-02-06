@@ -1,6 +1,3 @@
-<?php
-  session_start();
-?>
 <!DOCTYPE html>
 
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -49,34 +46,25 @@
     <link href="./Signin Template · Bootstrap v5.1_files/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    
-<main class="form-signin">
-  <form method="post" action="src/connect.php">
-    <img class="mb-4" src="./Signin Template · Bootstrap v5.1_files/bootstrap-logo.svg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-       name="email" value="johans1023@hotmail.com">
-      <label for="floatingInput">Email address</label>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      Occurring an error
+    </div>    
+    <div class="col">      
+        <?php echo  "Your Login Name or Password is invalid"; ?>
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="password">
-      <label for="floatingPassword">Contraseña</label>
+    <div class="col">      
+        <a href="../index.php">Volver al inicio</a>
     </div>
+  </div>
+</div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">© 2022</p>
-  </form>
-</main>
-
-
-    
   
 
 </body></html>
+
+
+

@@ -1,8 +1,11 @@
 <?php
 
-
-
-/****/
+/**
+ * @param
+ * @return $db
+ * @abstract This function return an connection to database MySql
+ * 
+ * **/
 function connect(){
 
     require_once('config.php');
@@ -10,13 +13,13 @@ function connect(){
     return $db;
 }
 
-
-
+/**
+ * 
+ * @param $user $pwd $connection
+ * @abstract This function compare the credentials from by the user, versus the server database
+ * **/
 function login($user, $pwd, $connection){
-    session_start();
-
-    $error ="";
-   
+           
     if($_SERVER["REQUEST_METHOD"] == "POST") {
                    
        $sql = "SELECT id FROM tabla WHERE nombre = '$user' and clave = '$pwd'";
@@ -24,34 +27,20 @@ function login($user, $pwd, $connection){
        
        $count = mysqli_num_rows($result);
                      
-       if($count == 1) {
-          session_register("email");
-          $error ="";
-          $_SESSION['login_user'] = $myusername;
-          
-          header("location: list.php");
-          
+       if($count == 1) {                                       
+          header("location: list.php");          
        }else {
-          $error = "Your Login Name or Password is invalid";        
-       }
-
-       if($error != ""){
-            echo $error;
-       }
+          header("location: error_handler_page.php");       
+       }       
     }
-
 }
 
 $connection = connect();
 
-$myusername = mysqli_real_escape_string($connection,$_POST['email']);
-$mypassword = mysqli_real_escape_string($connection,$_POST['password']); 
+$myusername = mysqli_real_escape_string($connection, $_POST['email']);
+$mypassword = mysqli_real_escape_string($connection, $_POST['password']); 
 
 login($myusername, $mypassword, $connection);
 
-
    
-
-    
-
 ?>
