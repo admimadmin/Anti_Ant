@@ -16,7 +16,7 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="./Signin Template · Bootstrap v5.1_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="./frontend/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -46,13 +46,13 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="./Signin Template · Bootstrap v5.1_files/signin.css" rel="stylesheet">
+    <link href="./frontend/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
     
 <main class="form-signin">
   <form method="post" action="src/connect.php">
-    <img class="mb-4" src="./Signin Template · Bootstrap v5.1_files/bootstrap-logo.svg" alt="" width="72" height="57">
+    <img class="mb-4" src="./frontend/bootstrap-logo.svg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
