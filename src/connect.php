@@ -1,5 +1,8 @@
 <?php
 
+
+
+/****/
 function connect(){
 
     define('DB_SERVER', 'localhost');
