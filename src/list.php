@@ -191,8 +191,8 @@
         <td><a href="<?php echo $domain ['web'];?>"> <?php echo $domain['web'];?> </a></td>  
         <td> <?php echo $domain['user'];?> </td> 
         <td> <?php echo $domain['pwd'];?> </td> 
-        <td><a href="edit.php"> <input type="submit" value="enviar"> </a></td> 
-        <td><a href="delete.php"> <input type="submit" value="enviar"> </a></td>               		  				   				   				  
+        <td><a href="edit.php"><button type="button" class="btn btn-sm btn-outline-secondary">»»»</button></a></td> 
+        <td><a href="delete.php"> <button type="button" class="btn btn-sm btn-outline-secondary">»»»</button></a></td>               		  				   				   				  
         </tr>
       <?php }
     }else{
@@ -210,9 +210,9 @@
 </div>
 
 
-    <script src="./Dashboard Template · Bootstrap v5.1_files/bootstrap.bundle.min.js.download" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="../frontend/Dashboard Template · Bootstrap v5.1_files/bootstrap.bundle.min.js.download" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-      <script src="./Dashboard Template · Bootstrap v5.1_files/feather.min.js.download" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="./Dashboard Template · Bootstrap v5.1_files/Chart.min.js.download" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="./Dashboard Template · Bootstrap v5.1_files/dashboard.js.download"></script>
+      <script src="../frontend/Dashboard Template · Bootstrap v5.1_files/feather.min.js.download" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="./Dashboard Template · Bootstrap v5.1_files/Chart.min.js.download" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="./Dashboard Template · Bootstrap v5.1_files/dashboard.js.download"></script>
   
 
 </body></html>

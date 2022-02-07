@@ -1,3 +1,16 @@
+
+<?php
+
+  session_start();
+
+  if(isset($_SESSION['user'])){
+
+
+  }
+
+  session_destroy(); 
+?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/5.1/examples/cover/ -->
 <html lang="en" class="h-100"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

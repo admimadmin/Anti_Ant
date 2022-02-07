@@ -1,5 +1,7 @@
 <?php
 
+
+session_start();
 /**
  * @param
  * @return $db
@@ -28,7 +30,11 @@ function login($user, $pwd, $connection){
        $count = mysqli_num_rows($result);
                      
        if($count == 1) {                                       
-          header("location: list.php");          
+          
+         session_register($user);
+         $_SESSION['user'] = $user;
+         header("location: home.php");
+
        }else {
           header("location: error_handler_page.php");       
        }       
