@@ -1,23 +1,19 @@
-<?php
-    session_start();                       
-?>
-
 <!DOCTYPE html>
-
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0049)https://getbootstrap.com/docs/5.1/examples/cover/ -->
+<html lang="en" class="h-100"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Admin page</title>
+    <title>Admin web</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
 
     
 
     <!-- Bootstrap core CSS -->
-<link href="./frontend/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="../frontend/Cover Template · Bootstrap v5.1_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -47,15 +43,33 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="./frontend/signin.css" rel="stylesheet">
+    <link href="../frontend/Cover Template · Bootstrap v5.1_files/cover.css" rel="stylesheet">
   </head>
-  <body class="text-center">
-  <div class="container">
-      <h3>Session off</h3>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Demo admin web sites</h3>
+      
     </div>
+  </header>
 
-    <div class="container">
-      <h2><a href="../index.php">Iniciar sesion</a></h2>
-    </div>
+  <main class="px-3">
+    <h1>Session off</h1>
+    <p class="lead">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+    <p class="lead">
+      <a href="../index.php" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Iniciar sesion</a>
+    </p>
+  </main>
+
+  <footer class="mt-auto text-white-50">
+    <p>2022 <a href="https://getbootstrap.com/" class="text-white">Software Lab</a>, by <a href="https://twitter.com/mdo" class="text-white">@Johans</a>.</p>
+  </footer>
+</div>
+
+
+    
+  
 
 </body></html>

@@ -1,6 +1,3 @@
-<?php
-  session_start();
-?>
 <!DOCTYPE html>
 
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -49,30 +46,54 @@
     <link href="./frontend/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    
-<main class="form-signin">
-  <form method="post" action="src/connect.php">
-    <img class="mb-4" src="./frontend/bootstrap-logo.svg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-       name="email" value="johans1023@hotmail.com">
-      <label for="floatingInput">Email address</label>
+  <div class="container">
+  <div class="col">      
+        <a href="../index.php">Volver al inicio</a>
+    </div> 
+    <div class="col">      
+        <a href="logout.php">Cerrar session</a>
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="password">
-      <label for="floatingPassword">Contraseña</label>
     </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">© 2022</p>
-  </form>
-</main>
+<table id="editableTable" class="table-primary">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Web</th>															
+		</tr>
+	</thead>
+	<tbody>
+		<?php
     
+    require_once("config.php");
+
+    $conn = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM domains";
+    $result = $conn->query($sql);
+  
+    if ($result->num_rows > 0) {
+      while($domain = $result->fetch_assoc()) { ?>
+        <tr id="<?php echo $domain ['id']; ?>">
+        <td><?php echo $domain ['id']; ?></td>
+        <td><a href="<?php echo $domain ['web'];?>"> <?php echo $domain['web'];?> </a></td>        		  				   				   				  
+        </tr>
+      <?php }
+    }else{
+
+      echo "0 results";
+    }
+    
+     ?>
+	</tbody>
+</table>
+
+<?php
+  $conn->close();
+?>
+
 </body></html>
