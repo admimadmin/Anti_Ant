@@ -1,3 +1,7 @@
+<?php
+    session_start();                       
+?>
+
 <!DOCTYPE html>
 
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -6,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Login page</title>
+    <title>Admin page</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 
@@ -47,75 +51,11 @@
   </head>
   <body class="text-center">
   <div class="container">
-  <div class="col">      
-        <a href="../index.php">Volver al inicio</a>
-    </div> 
-    <div class="col">      
-        <a href="logout.php">Cerrar session</a>
-    </div>
+      <h3>Session off</h3>
     </div>
 
-
-
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "work_primade";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM domains";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Name: " . $row["web"]. "<br>";
-  }
-} else {
-  echo "0 results";
-}
-?>
-
-
-<table id="editableTable" class="table-primary">
-	<thead>
-		<tr>
-			<th>Id</th>
-			<th>Web</th>
-															
-		</tr>
-	</thead>
-	<tbody>
-		<?php
-    
-      $sql = "SELECT * FROM domains";
-      $result = $conn->query($sql);
-
-      if ($result->num_rows > 0) {
-      while( $developer = $result->fetch_assoc()) { ?>
-        <tr id="<?php echo $developer ['id']; ?>">
-        <td><?php echo $developer ['id']; ?></td>
-        <td><?php echo $developer ['web']; ?></td>		  				   				   				  
-        </tr>
-      <?php }
-    }else{
-
-      echo "0 results";
-    }
-    
-     ?>
-	</tbody>
-</table>
-
-<?php
-  $conn->close();
-?>
+    <div class="container">
+      <h2><a href="../index.php">Iniciar sesion</a></h2>
+    </div>
 
 </body></html>
