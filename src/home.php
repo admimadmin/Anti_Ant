@@ -5,7 +5,7 @@ session_start();
 
 if(!isset($_SESSION['user'])){
 
-  echo "Dont' permission to access this site";
+    header("location: permission_denied.php");
 }else{  
 
 
