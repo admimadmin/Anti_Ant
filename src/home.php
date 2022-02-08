@@ -71,9 +71,10 @@ if(API::check_session_on($_SESSION['user'])){
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="https://getbootstrap.com/docs/5.1/examples/album/#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="https://getbootstrap.com/docs/5.1/examples/album/#" class="text-white">Like on Facebook</a></li>
-            <li><a href="https://getbootstrap.com/docs/5.1/examples/album/#" class="text-white">Email me</a></li>
+            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+            <li><a href="#" class="text-white">Like on Facebook</a></li>
+            <li><a href="#" class="text-white">Email me</a></li>
+            <li><a class="text-white"><?php echo $api->get_current_date(); ?></a></li>
           </ul>
         </div>
       </div>

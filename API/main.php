@@ -111,8 +111,31 @@ class API{
         return $_SESSION['user'];
     }
 
+    protected function get_word_cnt($file_fullpath) {
+        $file = @fopen($file_fullpath, "r");
+        if ($file === FALSE) {
+          // error_log("Failed to open file $file_fullpath .");
+          return -1;
+        }
+        $cnt = 0;
+        while (!feof($file)) {
+          $line = fgets($file, 8192);
+          $cnt += str_word_count($line);
+        }
+        fclose($file);
+        return $cnt;
+    }
+
+
+    public function verify_secure_lenth_page($path){
+        if( $this->get_word_cnt($path) < 1000 ){
+            echo "Secure performance render";
+        }
+    }
 }
 
+$api = new API();
 
+echo $api->verify_secure_lenth_page('C:\Users\IEUser\Documents\php_test\script.php');
 
 ?>
