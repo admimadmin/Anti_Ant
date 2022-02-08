@@ -36,6 +36,7 @@ function login($user, $pwd, $connection){
          header("location: home.php");
 
        }else {
+          
           header("location: error_handler_page.php");       
        }       
     }

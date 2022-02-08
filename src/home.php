@@ -1,16 +1,16 @@
 <?php
 
-session_start();
+require_once('../API/main.php');
 
+API::session_init();
 
-if(!isset($_SESSION['user'])){
-
-    header("location: permission_denied.php");
+if(API::check_session_on($_SESSION['user'])){  
+  
+  API::handle_permission_denied();      
 }else{  
-
-  require_once("API/main.php");  
-
+  
 ?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0050)https://getbootstrap.com/docs/5.1/examples/album/# -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,7 +19,7 @@ if(!isset($_SESSION['user'])){
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title><?php echo  ADMIN_SITES; ?></title>
+    <title><?php $api = new API(); echo $api->getTitle('home'); ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -63,7 +63,7 @@ if(!isset($_SESSION['user'])){
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">Hi <?php echo $_SESSION['user']; ?></h4>
+          <h4 class="text-white">Hi <?php $api = new API(); echo $api->get_current_user(); ?></h4>
           <h4 class="text-white">About</h4>
           <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
         </div>
@@ -79,12 +79,18 @@ if(!isset($_SESSION['user'])){
     </div>
   </div>
   <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="https://getbootstrap.com/docs/5.1/examples/album/#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-        <strong>Home</strong>
+    <div class="container">     
+      <a href="logout.php" 
+        class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" 
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" 
+          viewBox="0 0 24 24">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+          <circle cx="12" cy="13" r="4"></circle></svg>
+        <strong>Log out</strong>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" 
+        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>    

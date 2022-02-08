@@ -1,14 +1,14 @@
 <?php
 
-session_start();
+  require_once('../API/main.php');
+  
+  API::session_init();
 
-
-if(!isset($_SESSION['user'])){
-
-    header("location: permission_denied.php");
-}else{  
-
-
+  if(API::check_session_on($_SESSION['user'])){  
+    
+    API::handle_permission_denied();      
+  }else{  
+    $api = new API();
 ?>
 
 <!DOCTYPE html>
@@ -19,11 +19,9 @@ if(!isset($_SESSION['user'])){
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Admin sites</title>
+    <title><?php echo $api->getTitle('list'); ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
-
-    
 
     <!-- Bootstrap core CSS -->
 <link href="../frontend/Dashboard Template · Bootstrap v5.1_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">

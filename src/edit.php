@@ -1,13 +1,14 @@
 <?php
 
-  session_start();
+require_once('../API/main.php');
 
+API::session_init();
 
-  if(!isset($_SESSION['user'])){
-
-    header("location: permission_denied.php");
-  }else{  
-
+if(API::check_session_on($_SESSION['user'])){  
+  
+  API::handle_permission_denied();      
+}else{  
+  $api = new API();
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Edit register form</title>
+    <title> <?php $api = new API(); echo $api->getTitle('edit'); ?> </title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-fixed/">
 
