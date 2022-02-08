@@ -1,5 +1,11 @@
 <?php
   session_start();
+
+  require_once("API/main.php");
+
+  //$api = new API();        
+
+
 ?>
 <!DOCTYPE html>
 
@@ -9,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Login page</title>
+    <title><?php echo  ADMIN_SITES; ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 

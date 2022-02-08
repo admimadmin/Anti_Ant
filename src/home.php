@@ -8,6 +8,7 @@ if(!isset($_SESSION['user'])){
     header("location: permission_denied.php");
 }else{  
 
+  require_once("API/main.php");  
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +19,7 @@ if(!isset($_SESSION['user'])){
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Home · User</title>
+    <title><?php echo  ADMIN_SITES; ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -111,61 +112,61 @@ if(!isset($_SESSION['user'])){
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <?php
 
-for($idx=0; $idx<9; $idx++ ){ 
-  echo "
-      <div class='col'>
-        <div class='card shadow-sm'>
-          <svg class='bd-placeholder-img card-img-top' width='100%' height='225' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Placeholder: Thumbnail' preserveAspectRatio='xMidYMid slice' focusable='false'><title>Placeholder</title><rect width='100%' height='100%' fill='#55595c'></rect><text x='50%' y='50%' fill='#eceeef' dy='.3em'>Thumbnail</text></svg>
+          for($idx=0; $idx<50; $idx++ ){ 
+    echo "
+        <div class='col'>
+          <div class='card shadow-sm'>
+            <svg class='bd-placeholder-img card-img-top' width='100%' height='225' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Placeholder: Thumbnail' preserveAspectRatio='xMidYMid slice' focusable='false'><title>Placeholder</title><rect width='100%' height='100%' fill='#55595c'></rect><text x='50%' y='50%' fill='#eceeef' dy='.3em'>Thumbnail</text></svg>
 
-          
-            <div class='card-body'>
-              <p class='card-text'>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class='d-flex justify-content-between align-items-center'>               
-                    <div class='btn-group'>   
-                      <form action='edit.php' method='post'>
-                        <input type='hidden' name='id_site' value='";<?php echo $idx."'>                     
-                        <button type='submit' class='btn btn-sm btn-outline-secondary'>Edit</button>
-                      </form>
-                    </div>
-                    <div class='btn-group'>
-                      <form action='details.php' method='post'>
-                        <input type='hidden' name='id_site' value='#1'>
-                        <button type='submit' class='btn btn-sm btn-outline-secondary'>View</button>
-                      </form>  
-                    </div>
-                  <small class='text-muted'>9 mins</small>                  
-              </div>
-            </div>            
+            
+              <div class='card-body'>
+                <p class='card-text'>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class='d-flex justify-content-between align-items-center'>               
+                      <div class='btn-group'>   
+                        <form action='edit.php' method='post'>
+                          <input type='hidden' name='id_site' value='$idx'>                     
+                          <button type='submit' class='btn btn-sm btn-outline-secondary'>Edit</button>
+                        </form>
+                      </div>
+                      <div class='btn-group'>
+                        <form action='details.php' method='post'>
+                          <input type='hidden' name='id_site' value='#1'>
+                          <button type='submit' class='btn btn-sm btn-outline-secondary'>View</button>
+                        </form>  
+                      </div>
+                    <small class='text-muted'>9 mins</small>                  
+                </div>
+              </div>            
+          </div>
         </div>
-      </div>
-
-  }
-'        
+";
+    }
         
+        ?>
       </div>
     </div>
   </div>
 
 </main>
 
-<footer class='text-muted py-5'>
-  <div class='container'>
-    <p class='float-end mb-1'>
-      <a href='https://getbootstrap.com/docs/5.1/examples/album/#'>Back to top</a>
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="https://getbootstrap.com/docs/5.1/examples/album/#">Back to top</a>
     </p>
-    <p class='mb-1'>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-    <p class='mb-0'>New to Bootstrap? <a href='https://getbootstrap.com/'>Visit the homepage</a> or read our <a href='https://getbootstrap.com/docs/5.1/getting-started/introduction/'>getting started guide</a>.</p>
+    <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself!</p>
+    <p class="mb-0">New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">getting started guide</a>.</p>
   </div>
 </footer>
 
 
-    <script src='../frontend/Album example · Bootstrap v5.1_files/bootstrap.bundle.min.js.download' integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p' crossorigin='anonymous'></script>
+    <script src="../frontend/Album example · Bootstrap v5.1_files/bootstrap.bundle.min.js.download" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
       
   
 
 </body></html>
-"
 
+<?php
 }
 ?>
