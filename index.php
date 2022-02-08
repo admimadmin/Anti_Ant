@@ -1,4 +1,10 @@
+<?php
+  require_once("API/main.php");
 
+  $api = new API();        
+
+
+?>
 <!DOCTYPE html>
 
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title></title>
+    <title><?php  echo $api->get_title('login');  ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 
@@ -69,7 +75,7 @@
       </label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">©2022</p>
+    <p class="mt-5 mb-3 text-muted">&copy; <?php  echo $api->get_current_year(); ?></p>
   </form>
 </main>
     

@@ -70,11 +70,20 @@ class API{
         return $this->words;
     }
 
+
+    public function get_current_year(){
+        $interval = date("Y") - 5; //TODO format render
+        $year = date("Y");    
+        return $year;
+    }
+
     /***
      * @return Current date
      * 
     */
     public function get_Current_Date(){
+
+        $this->date = date("Y/m/d");
         return $this->date;
     }
 
@@ -98,7 +107,9 @@ class API{
         return $flag;
     }
 
-  
+    public function get_current_user(){
+        return $_SESSION['user'];
+    }
 
 }
 

@@ -8,8 +8,9 @@ if(API::check_session_on($_SESSION['user'])){
   
   API::handle_permission_denied();      
 }else{  
-  
+  $api = new API();
 ?>
+
 
 <!DOCTYPE html>
 <!-- saved from url=(0050)https://getbootstrap.com/docs/5.1/examples/album/# -->
@@ -19,7 +20,7 @@ if(API::check_session_on($_SESSION['user'])){
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title><?php $api = new API(); echo $api->getTitle('home'); ?></title>
+    <title><?php echo $api->get_title('home'); ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -63,7 +64,7 @@ if(API::check_session_on($_SESSION['user'])){
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">Hi <?php $api = new API(); echo $api->get_current_user(); ?></h4>
+          <h4 class="text-white">Hi <?php  echo  $api->get_current_user(); ?></h4>
           <h4 class="text-white">About</h4>
           <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
         </div>

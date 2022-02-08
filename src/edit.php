@@ -19,7 +19,7 @@ if(API::check_session_on($_SESSION['user'])){
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title> <?php $api = new API(); echo $api->getTitle('edit'); ?> </title>
+    <title> <?php $api = new API(); echo $api->get_title('edit'); ?> </title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-fixed/">
 
