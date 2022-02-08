@@ -134,8 +134,4 @@ class API{
     }
 }
 
-$api = new API();
-
-echo $api->verify_secure_lenth_page('C:\Users\IEUser\Documents\php_test\script.php');
-
 ?>
